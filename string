@@ -1,0 +1,62 @@
+//Write a c program which will copy,concatenate and compare 2 strings without using string.h header file
+#include<stdio.h>
+int main()
+{
+char a[50],b[50],c[200],ch,d[60];
+int i=0,j=0,count=0;
+printf("Enter 1st string: ");
+gets(a);
+printf("Enter 2nd string: ");
+gets(b);
+printf("Which string do you want to copy? a or b?");
+scanf("%c",&ch);
+if(ch=='a'){
+    while(a[i]!='\0'){
+            d[i]=a[i];
+            i++;
+    }
+    d[i]='\0';
+}
+
+if(ch=='b'){
+    while(b[i]!='\0'){
+            d[i]=b[i];
+            i++;
+    }
+    d[i]='\0';
+}
+i=0,j=0;
+while(a[i]!='\0')
+{
+c[i]=a[i];
+i++;
+}
+if(c[i]=='\0')
+{
+c[i]=' ';
+i++;
+}
+while(b[j]!='\0')
+{
+c[i]=b[j];
+j++;
+i++;
+}
+c[i]='\0';
+i=0;
+while(a[i]!='\0' && (b[i]!='\0')){
+        if(a[i]==b[i])
+        count++;
+    else
+        break;
+        i++;
+    }
+if(count==strlen(a)&& count== strlen(b))
+    printf("Both the strings are same");
+else
+    printf("Strings aren't same");
+
+printf("\nThe concatenated string is: %s",c);
+printf("\n The copied string is: %s",d);
+return 0;
+}
