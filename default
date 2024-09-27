@@ -1,0 +1,24 @@
+//C++ program to calculate the SI where ROI has a default value of 15%
+#include<iostream>
+    using namespace std;
+    float si(float p,float t,float rate=15){
+    cout<<"Simple Interest: "<<(p*rate*t)/100;
+    }
+int main(){
+int p,t,r;
+cout<<"Enter amount: ";
+cin>>p;
+cout<<"Enter time: ";
+cin>>t;
+char ch;
+cout<<"Do you want to enter rate?(y/n): ";
+cin>>ch;
+if(ch=='y'|| ch== 'Y'){
+    cout<<"Enter rate: ";
+cin>>r;
+si(p,r,t);
+}
+else
+si(p,t);
+return 0;
+}
