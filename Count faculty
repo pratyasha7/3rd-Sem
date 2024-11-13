@@ -1,0 +1,51 @@
+//write a simple c++ program to count the no of faculty in a department and display their details
+#include <iostream>
+using namespace std;
+
+struct Faculty {
+    string name;
+    int id;
+    string department;
+};
+
+// Function to input faculty details
+void inputFacultyDetails(Faculty faculty[], int count) {
+    for (int i = 0; i < count; i++) {
+        cout << "Enter details of faculty " << i + 1 << ":\n";
+        cout << "Name: ";
+        cin >> faculty[i].name;
+        cout << "ID: ";
+        cin >> faculty[i].id;
+        cout << "Department: ";
+        cin >> faculty[i].department;
+    }
+}
+
+// Function to display faculty details
+void displayFacultyDetails(Faculty faculty[], int count) {
+    cout << "\nDetails of Faculty Members:\n";
+    for (int i = 0; i < count; i++) {
+        cout << "Faculty " << i + 1 << ": \n";
+        cout << "Name: " << faculty[i].name << "\n";
+        cout << "ID: " << faculty[i].id << "\n";
+        cout << "Department: " << faculty[i].department << "\n";
+        cout << "--------------------------\n";
+    }
+}
+
+int main() {
+    int count;
+    
+    // Input number of faculty
+    cout << "Enter the number of faculty members: ";
+    cin >> count;
+
+    // Create an array of Faculty structures
+    Faculty faculty[count];
+
+    // Input and display details of faculty members
+    inputFacultyDetails(faculty, count);
+    displayFacultyDetails(faculty, count);
+
+    return 0;
+}
