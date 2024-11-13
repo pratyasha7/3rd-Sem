@@ -1,0 +1,27 @@
+//Reverse Floyd Triangle
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n, num;
+    
+    // Input: Number of rows
+    cout << "Enter the number of rows: ";
+    cin >> n;
+
+    // Calculate the starting number
+    num = n * (n + 1) / 2;
+
+    // Generate Reverse Floyd's Triangle
+    for (int i = n; i >= 1; i--) {
+        for (int j = 1; j <= i; j++) {
+            cout << num << " ";
+            num--; // Decrease the number for the next element
+        }
+        cout << endl; // Move to the next line
+    }
+
+    return 0;
+}
+
++//*
